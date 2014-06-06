@@ -17,7 +17,7 @@ for (i in seq_len(length(dates))) {
     epochT[i] = as.integer(cc)
 }
 png("plot2.png")
-plot(epochT, gap, type="l", axes=FALSE, xlab="", ylab="Global Active Power (kilowatts)")
+plot(epochT, gap, type="l", xaxt='n', xlab="", ylab="Global Active Power (kilowatts)")
 axis(side=1, at=c(min(epochT), median(epochT), max(epochT)), labels=c("Thu","Fri", "Sat"))
-axis(side=2, at=c(0,2,4,6))
+
 dev.off()
