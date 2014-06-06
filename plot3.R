@@ -21,14 +21,14 @@ for (i in seq_len(length(dates))) {
 }
 png("plot3.png")
 
-plot(epochT, s1, ylab="", xlab="", ylim=c(0,30),type="l", xaxt='n')
+plot(epochT, s1, ylab="", xlab="", ylim=c(0,40),type="l", xaxt='n', yaxt='n')
 par(new=TRUE)
-plot(epochT, s3, ylab="", xlab="", ylim=c(0,30), type="l", xaxt='n', col='blue')
+plot(epochT, s3, ylab="", xlab="", ylim=c(0,40), type="l", xaxt='n', yaxt='n', col='blue')
 par(new=TRUE)
-plot(epochT, s2, ylab="Energy sub metering", xlab="", ylim=c(0,30), type="l", xaxt='n', col='red')
+plot(epochT, s2, ylab="Energy sub metering", xlab="", ylim=c(0,40), type="l", yaxt='n', xaxt='n', col='red')
 par(new=TRUE)
 legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5,2.5,2.5), col=c('black', 'red', 'blue'))
 
 axis(side=1, at=c(min(epochT), median(epochT), max(epochT)), labels=c("Thu","Fri", "Sat"))
-
+axis(side=2, at=c(0,10,20,30))
 dev.off()
